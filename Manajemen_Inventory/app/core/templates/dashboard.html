@@ -1,38 +1,51 @@
-{% extends 'base.html' %} {% block content %}
-<h1>Dashboard</h1>
+{% extends 'base.html' %}
+{% block content %}
+<h1 class="text-center my-4">Dashboard</h1>
 
-<div class="row mt-4">
-  <div class="col-md-3">
-    <div class="card">
-      <div class="card-body">
+<div class="row">
+  <!-- Total Items -->
+  <div class="col-md-3 mb-4">
+    <div class="card text-white bg-primary shadow-sm">
+      <div class="card-body text-center">
         <h5 class="card-title">Total Items</h5>
-        <p class="card-text display-4">{{ total_items }}</p>
+        <p class="card-text display-4 fw-bold">{{ total_items }}</p>
       </div>
     </div>
   </div>
-  <div class="col-md-3">
-    <div class="card">
-      <div class="card-body">
+
+  <!-- Total Stock Value -->
+  <div class="col-md-3 mb-4">
+    <div class="card text-white" style="background-color: #fab1bd; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+      <div class="card-body text-center">
         <h5 class="card-title">Jumlah Nilai Keseluruhan</h5>
-        <p class="card-text display-4">Rp {{ total_stock_value }}</p>
+        <p class="card-text display-4 fw-bold">Rp {{ total_stock_value }}</p>
       </div>
     </div>
   </div>
-  <div class="col-md-3">
-    <div class="card">
-      <div class="card-body">
+
+  <!-- Total Categories -->
+  <div class="col-md-3 mb-4">
+    <div class="card text-white bg-warning shadow-sm">
+      <div class="card-body text-center">
         <h5 class="card-title">Kategori</h5>
-        <p class="card-text display-4">{{ total_categories }}</p>
+        <p class="card-text display-4 fw-bold">{{ total_categories }}</p>
       </div>
     </div>
   </div>
-  <div class="col-md-3">
-    <div class="card">
-      <div class="card-body">
+
+  <!-- Total Suppliers -->
+  <div class="col-md-3 mb-4">
+    <div class="card text-white bg-danger shadow-sm">
+      <div class="card-body text-center">
         <h5 class="card-title">Suppliers</h5>
-        <p class="card-text display-4">{{ total_suppliers }}</p>
+        <p class="card-text display-4 fw-bold">{{ total_suppliers }}</p>
       </div>
     </div>
   </div>
+</div>
+
+<!-- Optional: Add a Footer -->
+<div class="mt-4 text-center">
+  <p class="text-muted">Data terakhir diperbarui: {{ last_updated }}</p>
 </div>
 {% endblock %}
